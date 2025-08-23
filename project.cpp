@@ -48,7 +48,7 @@ namespace util
             i += take;
         }
     }
-} // namespace util
+} // namespace util(to store common work classes)
 static const char MAGIC[8] = {'E', 'N', 'C', 'I', 'M', 'G', 'O', '1'};
 struct Args
 {
