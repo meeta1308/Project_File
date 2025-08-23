@@ -134,6 +134,13 @@ int main(int argc, char **argv)
             cerr << "Cannot open input:" << args.in << "\n";
             return 1;
         }
+        fin.seekg(0, ios::end);
+        if (fin.tellg() <= 0)
+        {
+            cerr << "Input file is empty or unreadable: " << args.in << "\n";
+            return 1;
+        }
+        fin.seekg(0, ios::beg);
         ofstream fout(args.out, ios::binary);
         if (!fout)
         {
@@ -174,6 +181,14 @@ int main(int argc, char **argv)
             cerr << "Cannot open input:" << args.in << "\n";
             return 1;
         }
+        fin.seekg(0, ios::end);
+        if (fin.tellg() <= 0)
+        {
+            cerr << "Input file is empty or unreadable: " << args.in << "\n";
+            return 1;
+        }
+        fin.seekg(0, ios::beg);
+
         ofstream fout(args.out, ios::binary);
         if (!fout)
         {
